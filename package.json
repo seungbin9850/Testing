@@ -1,0 +1,31 @@
+{
+  "name": "testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.ts",
+  "scripts": {
+    "test": "mocha -r ts-node/register ./**/*.spec.ts",
+    "start": "nodemon --exec ts-node src/app.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.7",
+    "@types/mocha": "^8.0.0",
+    "@types/mysql": "^2.15.15",
+    "@types/node": "^14.0.24",
+    "@types/sequelize": "^4.28.9",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.1.0",
+    "node-mocks-http": "^1.8.1",
+    "sequelize": "^6.3.3",
+    "should": "^13.2.3",
+    "typescript": "^3.9.7"
+  }
+}
