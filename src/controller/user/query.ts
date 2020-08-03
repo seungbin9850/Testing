@@ -1,8 +1,8 @@
 import { User } from "../../models/user";
 
-export const findOneById = async (id: string): Promise<User> => {
+export const findOneById = async (userId: string): Promise<User> => {
     try {
-        const user: any = await User.findOne({ where: { id } });
+        const user: any = await User.findOne({ where: { userId } });
         return user;
     } catch (e) {
         throw e;
