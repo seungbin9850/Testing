@@ -36,4 +36,35 @@ describe('User Spec Test', () => {
                 done();
             })
     })
+
+    it('POST /user/login (403)', (done) => {
+        chai
+            .request(app)
+            .post("/user/login")
+            .send({
+                userId: "userId",
+                password: "password1111",
+            })
+            .end((err, res) => {
+                expect(res).to.have.status(403);
+                expect(res.body).to.have.property("message");
+                expect(res.body.message).to.eq("실패")
+                done();
+            })
+    })
+
+    it('POST /user/login (404)', (done) => {
+        chai
+            .request(app)
+            .post("/user/login")
+            .send({
+                userId: "userId1111",
+                password: "password",
+            })
+            .end((err, res) => {
+                expect(res).to.have.status(404);
+                expect(res.body).to.have.property("message");
+                done();
+            })
+    })
 });
