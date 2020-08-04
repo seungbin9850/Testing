@@ -14,5 +14,6 @@ export const login = async (req: Request, res: Response) => {
     const user = await query.findOneById(userId);
     if (user.password !== password)
         res.status(403).json({ message: "실패" });
-    res.status(200).json({ message: "성공" });
+    else
+        res.status(200).json({ message: "성공" });
 }
