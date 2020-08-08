@@ -31,6 +31,7 @@ describe('User Spec Test', () => {
             .end((err, res) => {
                 expect(res).to.have.status(200);
                 expect(res.body).to.have.property("message");
+                expect(res.body).to.have.property("accessToken");
                 expect(res.body.message).to.eq("성공")
                 done();
             })
