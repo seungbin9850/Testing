@@ -1,5 +1,6 @@
 import { sequelize } from "../config/config";
 import Sequelize, { Model } from "sequelize";
+import { Post } from "./post";
 
 export class User extends Model {
     name: string;
@@ -31,3 +32,6 @@ User.init (
         modelName: "User"
     }
 )
+
+User.hasMany(Post, { foreignKey: "userId", sourceKey: "id" });
+Post.belongsTo(User, { foreignKey: "userId" });
