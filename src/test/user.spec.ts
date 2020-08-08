@@ -1,6 +1,5 @@
 import chai from "chai";
 import chaiHttp from "chai-http";
-import { type } from "os";
 import app from "../app";
 
 const expect = chai.expect;
@@ -36,7 +35,6 @@ describe('User Spec Test', () => {
                 done();
             })
     })
-
     it('POST /user/login (403)', (done) => {
         chai
             .request(app)
@@ -52,7 +50,6 @@ describe('User Spec Test', () => {
                 done();
             })
     })
-
     it('POST /user/login (404)', (done) => {
         chai
             .request(app)
