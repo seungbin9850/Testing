@@ -9,25 +9,25 @@ dotenv.config({ path: path.join(__dirname, "../../.env") });
 
 const app = express();
 
-app.use(morgan('dev'));
+app.use(morgan("dev"));
 
 sequelize.sync();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.set('jwt-secret', process.env.JWT_SECRET);
+app.set("jwt-secret", process.env.JWT_SECRET);
 
-app.use('/', router)
+app.use("/", router);
 
 app.use((err, req: Request, res: Response, next: NextFunction) => {
-    res.status(404).json({
-        message: err.message
-    });
+  res.status(404).json({
+    message: err.message,
+  });
 });
 
 app.listen(3000, () => {
-    console.log("server on!");
+  console.log("server on!");
 });
 
 export default app;

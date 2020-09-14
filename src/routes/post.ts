@@ -7,5 +7,4 @@ const router = express();
 
 router.post("/", authMiddleware, tryCatchMiddleware.NotFound(Post.write));
 
-
 export default router;

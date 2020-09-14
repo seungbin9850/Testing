@@ -4,7 +4,7 @@ import * as User from "../controller/user/user.controller";
 
 const router = express();
 
-router.post('/register', tryCatchMiddleware.Conflict(User.register));
-router.post('/login', tryCatchMiddleware.NotFound(User.login));
+router.post("/register", tryCatchMiddleware.Conflict(User.register));
+router.post("/login", tryCatchMiddleware.NotFound(User.login));
 
 export default router;
